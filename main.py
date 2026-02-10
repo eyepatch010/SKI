@@ -16,7 +16,7 @@ from db.dbutil import get_mongoDb
 from db.dbclient import MongoDBClient
 from utils.logger import Logger
 from sekaiInformer.settings import settings
-import pyNacl
+#import pyNacl
 
 IDS = [574795956818673674,523593147004223488]  # Replace with your Discord ID
 

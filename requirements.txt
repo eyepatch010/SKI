@@ -5,6 +5,10 @@ jishaku
 pytesseract
 pillow
 opencv-python
-easyocr
 aiohttp
 numpy
+pymongo
+aiohttp
+datetime
+pydantic_settings
+utils
