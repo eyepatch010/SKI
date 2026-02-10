@@ -1,0 +1,10 @@
+requests
+discord.py
+beautifulsoup4
+jishaku
+pytesseract
+pillow
+opencv-python
+easyocr
+aiohttp
+numpy
