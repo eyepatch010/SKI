@@ -12,3 +12,4 @@ aiohttp
 datetime
 pydantic_settings
 utils
+logger
