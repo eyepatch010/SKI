@@ -35,42 +35,49 @@ activity = discord.Activity(type=discord.ActivityType.listening, name="discord.g
 
 class Bot(commands.Bot):
     def __init__(self):
-        super().__init__(command_prefix='=', intents=intents)
+        super().__init__(command_prefix='=',intents=intents)
         self.initial_extensions = [
             'cogs.shows',
             'cogs.score_stats',
             'cogs.message_utility',
         ]
-
     async def setup_hook(self):
-        self.mongodb = await get_mongoDb()
-        self.IDS = IDS
-
+        mongodb=await get_mongoDb()
+        self.mongodb=mongodb
+        self.IDS=IDS
         for ext in self.initial_extensions:
             await self.load_extension(ext)
+        Logger.init(client)
 
-        Logger.init(self)
 
         await self.load_extension('jishaku')
-
         os.environ["JISHAKU_NO_UNDERSCORE"] = "True"
         os.environ["JISHAKU_NO_DM_TRACEBACK"] = "True"
         os.environ["JISHAKU_HIDE"] = "True"
-
         await self.reload_extension('jishaku')
 
+
+
         try:
-            synced = await self.tree.sync()
+            synced = await self.tree.sync()  # Sync commands with Discord
             print(f"Synced {len(synced)} commands.")
         except Exception as e:
             print(f"Error syncing commands: {e}")
 
+                
+
+
+   
+    """async def close(self):
+        await super().close()
+        await self.session.close()"""
+
     async def on_ready(self):
+        global activity
         global ErrorChannel
-        ErrorChannel = self.get_channel(1350863748604231720)
+        ErrorChannel=client.get_channel(1350863748604231720)
         await self.change_presence(status=discord.Status.idle, activity=activity)
         print(f"✅ Logged in as {self.user}")
-
 
 
 #client = commands.Bot(command_prefix="=", intents=intents)
