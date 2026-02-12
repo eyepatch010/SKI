@@ -37,7 +37,7 @@ class Bot(commands.Bot):
     def __init__(self):
         super().__init__(command_prefix='=',intents=intents)
         self.initial_extensions = [
-            'cogs.shows',
+            #'cogs.shows',
             'cogs.score_stats',
             'cogs.message_utility'
         ]
@@ -84,7 +84,7 @@ class Bot(commands.Bot):
 client=Bot()
 
 
-client.add_tree()
+#client.add_tree()
 
 @client.tree.error
 async def global_error(interaction: discord.Interaction, error):
