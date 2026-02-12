@@ -73,12 +73,11 @@ class Bot(commands.Bot):
         await self.session.close()"""
 
     async def on_ready(self):
-        """global activity
+        global activity
         global ErrorChannel
         ErrorChannel=client.get_channel(1350863748604231720)
         await self.change_presence(status=discord.Status.idle, activity=activity)
-        print(f"✅ Logged in as {self.user}")"""
-        print("hello world  ")
+        print(f"✅ Logged in as {self.user}")
 
 
 #client = commands.Bot(command_prefix="=", intents=intents)
