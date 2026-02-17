@@ -12,5 +12,6 @@ class AppSettings(BaseSettings):
     MONGO_DB_URL:str
     MONGO_DB_NAME:str
     CLIENT_TOKEN:str
+    SHEET_LINK:str
 
 settings=AppSettings()

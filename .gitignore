@@ -4,4 +4,5 @@ env/
 venv/
 .venv/
 ENV/
+sheet_reader_key.json
 

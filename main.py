@@ -40,6 +40,7 @@ class Bot(commands.Bot):
             'cogs.shows',
             'cogs.score_stats',
             'cogs.message_utility',
+            'cogs.sheet_scanner'
         ]
     async def setup_hook(self):
         mongodb=await get_mongoDb()

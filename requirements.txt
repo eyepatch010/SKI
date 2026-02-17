@@ -11,3 +11,5 @@ pymongo
 aiohttp
 datetime
 pydantic_settings
+gspread
+google-auth
